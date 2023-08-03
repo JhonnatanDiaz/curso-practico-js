@@ -97,8 +97,7 @@ function renderProducts(arr) {
     const productName = document.createElement('p');
     productName.innerText = product.name;
   
-    productInfoDiv.appendChild(productPrice);
-    productInfoDiv.appendChild(productName);
+    productInfoDiv.append(productPrice, productName);
   
     const productInfoFigure = document.createElement('figure');
     const productImgCart = document.createElement('img');
@@ -106,11 +105,9 @@ function renderProducts(arr) {
   
     productInfoFigure.appendChild(productImgCart);
   
-    productInfo.appendChild(productInfoDiv);
-    productInfo.appendChild(productInfoFigure);
+    productInfo.append(productInfoDiv, productInfoFigure);
   
-    productCard.appendChild(productImg);
-    productCard.appendChild(productInfo);
+    productCard.append(productImg, productInfo);
   
     cardsContainer.appendChild(productCard);
   }
